@@ -1,0 +1,66 @@
+### Checks & detection
+Checking distribution and version [CentOS 7] OK
+Checking cpu virtualization capabilities OK
+Check free disk space OK
+Using local interface [ens3] OK
+Checking directories from previous installation OK
+Checking user from previous installation OK
+Checking sshd service is running OK
+Checking bridge-utils are installed SKIP will try to install
+Checking opennebula interface is not present OK
+Check given VN 172.16.100.0/24 is not routed OK
+Checking SELinux OK
+Checking for present ssh key SKIP
+Generating ssh keypair in /root/.ssh/id_rsa OK
+Checking presence of the market app: "CentOS 7 - KVM" OK
+Checking directories from previous installation IGNORED will be deleted
+
+
+### Main deployment steps:
+Purge previous installation
+Configure bridge opennebula with IP 172.16.100.1/24
+Enable NAT over ens3
+Using ssh public key /root/.ssh/id_rsa.pub
+Install OpenNebula version 5.6
+
+Do you agree? [yes/no]:
+
+### Installation
+Install bridge-utils OK
+Creating bridge interface opennebula OK
+Restarting network OK
+Enabling ipv4 forward OK
+Configuring nat using iptables OK
+Saving iptables changes OK
+Installing DNSMasq OK
+Starting DNSMasq OK
+Configuring repositories OK
+Installing epel OK
+Installing OpenNebula packages OK
+Installing ruby gems OK
+Installing OpenNebula node packages OK
+
+### Configuration
+Switching onegate endpoint in oned.conf OK
+Switching scheduler interval to 10sec OK
+Setting initial password for current user and oneadmin OK
+Starting opennebula services OK
+Checking OpenNebula is working OK
+Disabling ssh from virtual network OK
+Adding localhost ssh key to known_hosts OK
+Testing ssh connection to localhost OK
+Add ssh key to oneadmin user OK
+Updating datastores, TM_MAD=qcow2, SHARED=yes OK
+Creating host OK
+Creating virtual network OK
+Exporting [CentOS 7 – KVM] from marketplace to local datastore OK
+Updating template OK
+
+### Report
+OpenNebula 5.6 was installed
+Sunstone (the webui) is runninng on:
+  http://192.168.100.101:9869/
+Use following to login:
+  user: oneadmin
+  password: o6ARsMAdGe
+
